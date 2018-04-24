@@ -4,15 +4,15 @@ import { NgModule } from '@angular/core';
 import {routes} from './app.router';
 
 import { AppComponent } from './app.component';
-import {ExampleComponent} from './example/example.component';
-import {AlbumListComponent} from './musicList/album-list.component';
+import {AlbumListComponent} from './album/list/album-list.component';
+import {AlbumDetailsComponent} from './album/details/album-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumListComponent,
-    ExampleComponent,
+    AlbumDetailsComponent,
   ],
   imports: [
     BrowserModule,

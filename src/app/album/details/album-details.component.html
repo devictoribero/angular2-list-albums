@@ -1,18 +1,11 @@
-<section class="album-details">
-  <h1 class="album-details__title">{{title}}</h1>
-  <ul class="album-details__album-details" role='list'>
-    <a href="#" class="album-details__album-link" *ngFor="let album of albums" role="link">
-      <li class="album-details__album-item" role='listitem'>
-        <img class="album-details__album-thumbnail" src="{{album.thumbnail_url}}"
-             alt="Cover of the {{album.name}} album">
-        <div class="album-details__album-specifications">
-          <div class="album-details__album-details">
-            <span class="album-details__album-name">{{album.name}}</span>
-            <span class="album-details__album-num-of-songs">~ {{album.numOfSongs}} songs</span>
-          </div>
-          <span class="album-details__album-author">{{album.author}}</span>
-        </div>
-      </li>
-    </a>
+<main class="album">
+  <header class="album-header">
+    <h1 class="album-title">hola</h1>
+  </header>
+  <ul class="album__tracks-list" role="list">
+    <li class="album__track" *ngFor="let track of album.tracks">
+      <span class="album__track-name">nombre de la cancion</span>
+      <span class="album__track-name">123123123</span>
+    </li>
   </ul>
-</section>
+</main>

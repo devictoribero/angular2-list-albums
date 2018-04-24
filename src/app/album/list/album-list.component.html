@@ -1,7 +1,7 @@
 <section class="album-list">
   <h1 class="album-list__title">{{title}}</h1>
   <ul class="album-list__album-list" role='list'>
-    <a href="#" class="album-list__album-link" *ngFor="let album of albums" role="link">
+    <a [routerLink]="['/albums', album.id]" class="album-list__album-link" *ngFor="let album of albums" role="link">
       <li class="album-list__album-item" role='listitem'>
         <img class="album-list__album-thumbnail" src="{{album.thumbnail_url}}"
              alt="Cover of the {{album.name}} album">

@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import Album from '../Album';
-import {MUSICLIST} from '../../mocks/albums';
+import Album from '../entity/Album';
+import {MOCK_MUSIC} from '../../../mocks/albums';
 
 @Component({
     selector: 'app-album-list',
@@ -10,7 +10,7 @@ import {MUSICLIST} from '../../mocks/albums';
 
 export class AlbumListComponent implements OnInit {
     title: string = 'My music list';
-    albums: Array<Album> = MUSICLIST;
+    albums: Array<Album> = MOCK_MUSIC;
 
     constructor() { }
 

@@ -1,45 +1,55 @@
 export default class Album {
-    private _name: string;
-    private _author: string;
-    private _numOfSongs: number;
-    private _thumbnail_url: string;
+  private _id: number;
+  private _name: string;
+  private _author: string;
+  private _numOfSongs: number;
+  private _thumbnail_url: string;
 
-    constructor (name: string, author: string, numOfSongs: number, image: string) {
-        this.name = name;
-        this.author = author;
-        this.numOfSongs = numOfSongs;
-        this.thumbnail_url = image;
-    }
+  constructor(id: number, name: string, author: string, numOfSongs: number, image: string) {
+    this.id = id;
+    this.name = name;
+    this.author = author;
+    this.numOfSongs = numOfSongs;
+    this.thumbnail_url = image;
+  }
 
-    get name(): string {
-        return this._name;
-    }
+  get id(): number {
+    return this._id;
+  }
 
-    set name(value: string) {
-        this._name = value;
-    }
+  set id(value: number) {
+    this._id = value;
+  }
 
-    get author(): string {
-        return this._author;
-    }
+  get name(): string {
+    return this._name;
+  }
 
-    set author(value: string) {
-        this._author = value;
-    }
+  set name(value: string) {
+    this._name = value;
+  }
 
-    get numOfSongs(): number {
-        return this._numOfSongs;
-    }
+  get author(): string {
+    return this._author;
+  }
 
-    set numOfSongs(value: number) {
-        this._numOfSongs = value;
-    }
+  set author(value: string) {
+    this._author = value;
+  }
 
-    get thumbnail_url(): string {
-        return this._thumbnail_url;
-    }
+  get numOfSongs(): number {
+    return this._numOfSongs;
+  }
 
-    set thumbnail_url(value: string) {
-        this._thumbnail_url = value;
-    }
+  set numOfSongs(value: number) {
+    this._numOfSongs = value;
+  }
+
+  get thumbnail_url(): string {
+    return this._thumbnail_url;
+  }
+
+  set thumbnail_url(value: string) {
+    this._thumbnail_url = value;
+  }
 }
