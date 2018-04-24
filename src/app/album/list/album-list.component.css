@@ -1,0 +1,62 @@
+.album-list {
+    padding: 40px;
+}
+.album-list__title {
+    color: white;
+    margin: 0 0 20px 0;
+    font-size: 32px;
+    font-family: Serif;
+}
+
+.album-list__album-list {
+    background: #1a1a1a;
+    padding: 0;
+    margin: 0;
+}
+
+.album-list__album-link {
+    text-decoration: none;
+    display: block;
+}
+
+.album-list__album-link:not(:first-child) {
+    border-top: 1px solid #212121;
+}
+
+.album-list__album-item {
+    display: flex;
+    font-family: sans-serif;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.album-list__album-thumbnail {
+    width: 50px;
+    max-width: 50px;
+    height: 50px;
+    max-height: 50px;
+    border-radius: 3px;
+}
+
+
+.album-list__album-specifications {
+    margin-left: 10px;
+}
+
+.album-list__album-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+}
+
+.album-list__album-num-of-songs {
+    color: white;
+    font-style: italic;
+    font-size: 10px;
+}
+
+.album-list__album-author {
+    color: #e0e1e2;
+    font-style: italic;
+    font-size: 14px;
+}

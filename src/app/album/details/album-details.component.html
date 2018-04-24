@@ -1,0 +1,18 @@
+<section class="album-details">
+  <h1 class="album-details__title">{{title}}</h1>
+  <ul class="album-details__album-details" role='list'>
+    <a href="#" class="album-details__album-link" *ngFor="let album of albums" role="link">
+      <li class="album-details__album-item" role='listitem'>
+        <img class="album-details__album-thumbnail" src="{{album.thumbnail_url}}"
+             alt="Cover of the {{album.name}} album">
+        <div class="album-details__album-specifications">
+          <div class="album-details__album-details">
+            <span class="album-details__album-name">{{album.name}}</span>
+            <span class="album-details__album-num-of-songs">~ {{album.numOfSongs}} songs</span>
+          </div>
+          <span class="album-details__album-author">{{album.author}}</span>
+        </div>
+      </li>
+    </a>
+  </ul>
+</section>
