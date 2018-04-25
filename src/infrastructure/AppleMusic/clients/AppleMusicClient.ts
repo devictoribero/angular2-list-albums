@@ -1,5 +1,5 @@
-import AppleMusicRequest from '../Request/AppleMusicRequest';
-import HTTPClient from '../../common/http/HTTPClient';
+import AppleMusicRequest from '../../../app/Request/MusicRequest';
+import HTTPClient from '../../../app/common/http/HTTPClient';
 import AppleMusicClientInterface from './AppleMusicClientInterface';
 
 export default class AppleMusicClient implements AppleMusicClientInterface {

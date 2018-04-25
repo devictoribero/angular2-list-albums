@@ -1,9 +1,9 @@
-import AppleMusicRequest from './AppleMusicRequest';
+import MusicRequest from './MusicRequest';
 
-describe('AppleMusicRequest unit tests', () => {
-  let request: AppleMusicRequest;
+describe('MusicRequest unit tests', () => {
+  let request: MusicRequest;
   beforeEach(() => {
-    request = new AppleMusicRequest(1, 'album', 10);
+    request = new MusicRequest(1, 'album', 10);
   });
 
   it('the querystring is well formatted', () => {

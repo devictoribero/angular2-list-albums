@@ -1,5 +1,5 @@
 import {async} from '@angular/core/testing';
-import HTTPClient from '../../common/http/HTTPClient';
+import HTTPClient from '../../../app/common/http/HTTPClient';
 import AppleMusicClient from './AppleMusicClient';
 
 describe('AppleMusicClient tests', () => {

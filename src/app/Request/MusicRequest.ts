@@ -1,4 +1,4 @@
-export default class AppleMusicRequest {
+export default class MusicRequest {
   private artistId: number;
   private entityType: string;
   private limit: number;
