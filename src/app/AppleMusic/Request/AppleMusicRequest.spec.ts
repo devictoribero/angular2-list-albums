@@ -1,6 +1,6 @@
 import AppleMusicRequest from './AppleMusicRequest';
 
-describe('AppleMusic unit tests', () => {
+describe('AppleMusicRequest unit tests', () => {
   let request: AppleMusicRequest;
   beforeEach(() => {
     request = new AppleMusicRequest(1, 'album', 10);

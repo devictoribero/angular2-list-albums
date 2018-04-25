@@ -1,6 +1,6 @@
 import { AlbumListComponent } from './album-list.component';
 import {MockAlbumService} from '../services/mocks/MockAlbumService';
-import HTTPClient from '../../http/HTTPClient';
+import HTTPClient from '../../common/http/HTTPClient';
 
 
 describe('AlbumListComponent unit test', () => {

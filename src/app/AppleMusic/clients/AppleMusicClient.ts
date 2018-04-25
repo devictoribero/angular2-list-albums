@@ -1,19 +1,15 @@
-import HTTPClient from '../../http/HTTPClient';
+import AppleMusicRequest from '../Request/AppleMusicRequest';
+import HTTPClient from '../../common/http/HTTPClient';
 
-export default class AppleMusicClient extends HTTPClient {
-  private basepath = 'https://itunes.apple.com/lookup?';
+export default class AppleMusicClient {
+  public basepath = 'https://itunes.apple.com/lookup?';
   private httpclient: HTTPClient;
 
   constructor(httpclient: HTTPClient) {
-    super();
     this.httpclient = httpclient;
   }
 
-  getMusicByArtist(id: number) {
-    this.httpclient.get(`${this.basepath}/id=${id}`);
-  }
-
-  getMusicByArtist(id: number) {
-    this.httpclient.get(`${this.basepath}/id=${id}`);
+  get(request: AppleMusicRequest): Promise<any> {
+    return this.httpclient.get(this.basepath + request.getQueryString());
   }
 }

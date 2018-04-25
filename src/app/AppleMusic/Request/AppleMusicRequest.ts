@@ -13,7 +13,9 @@ export default class AppleMusicRequest {
     let queryString = '';
 
     queryString += 'id=' + this.artistId;
-    !this.entityType queryString += '&entity=' + this.entityType;
+    if (this.entityType) {
+      queryString += '&entity=' + this.entityType;
+    }
     queryString += '&limit=' + this.limit;
 
     return queryString;

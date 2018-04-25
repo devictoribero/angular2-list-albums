@@ -1,7 +1,7 @@
 import HTTPClient from './HTTPClient';
 import {async} from '@angular/core/testing';
 
-describe('AppleMusic unit tests', () => {
+describe('HTTPClient unit tests', () => {
   let httpclient: HTTPClient;
   beforeEach(() => {
     httpclient = new HTTPClient();
