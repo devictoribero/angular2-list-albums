@@ -4,12 +4,13 @@ import MusicAdapter from '../adapters/MusicAdapter';
 import AppleMusicClient from '../../../infrastructure/AppleMusic/clients/AppleMusicClient';
 import HTTPClient from '../../common/http/HTTPClient';
 import {async} from '@angular/core/testing';
+import {GetTracksFromAlbumById} from './GetTracksFromAlbumById';
 
-describe('GetAlbumsByArtistId tests', () => {
-  let getAlbumByArtistId: ServiceInterface;
+describe('GetTracksFromAlbumById tests', () => {
+  let getTracksFromAlbumById: ServiceInterface;
 
   beforeEach(() => {
-    getAlbumByArtistId = new GetAlbumsByArtistId(
+    getTracksFromAlbumById = new GetTracksFromAlbumById(
       new MusicAdapter(
         new AppleMusicClient(
           new HTTPClient()
@@ -18,10 +19,10 @@ describe('GetAlbumsByArtistId tests', () => {
     );
   });
 
-  it('GIVEN an artist id WHEN we fetch data THEN we have the result limited by 10', async(() => {
-    const artistID = 909253;
-    getAlbumByArtistId.handle(artistID).then(res => {
-      expect(res.resultCount).toBe(11);
+  it('GIVEN an album id WHEN we fetch data THEN we have the result limited by 3', async(() => {
+    const albumID = 909253;
+    getTracksFromAlbumById.handle(albumID, 2).then(res => {
+      expect(res.resultCount).toBe(3);
     });
   }));
 

@@ -1,5 +1,5 @@
 export default interface ServiceInterface {
 
-  handle(request: any): any;
+  handle(id: any, param2?: any): any;
 
 }
