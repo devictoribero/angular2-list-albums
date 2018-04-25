@@ -1,4 +1,4 @@
-import Track from '../app/Track/entity/Track';
+import Track from '../app/track/entity/Track';
 
 export const MOCK_ALBUM_DETAILS = {
   name: 'name of the album',

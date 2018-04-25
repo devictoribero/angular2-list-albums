@@ -1,18 +1,23 @@
 import { Component, OnInit} from '@angular/core';
 import Album from '../entity/Album';
-import {MOCK_MUSIC} from '../../../mocks/albums';
+import AlbumService from '../services/AlbumService';
 
 @Component({
-    selector: 'app-album-list',
-    templateUrl: './album-list.component.html',
-    styleUrls: ['./album-list.component.css'],
+  selector: 'app-album-list',
+  templateUrl: './album-list.component.html',
+  styleUrls: ['./album-list.component.css'],
 })
 
 export class AlbumListComponent implements OnInit {
-    title: string = 'My music list';
-    albums: Array<Album> = MOCK_MUSIC;
+  title: string = 'My music list';
+  albums: Array<Album> = [];
+  service: AlbumService;
 
-    constructor() { }
+  constructor(albumService: AlbumService) {
+    this.service = albumService;
+  }
 
-    ngOnInit() {}
+  ngOnInit() {
+    this.albums = this.service.get();
+  }
 }
