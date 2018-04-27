@@ -18,9 +18,10 @@ describe('GetAlbumsByArtistId tests', () => {
     );
   });
 
-  it('GIVEN an artist id WHEN we fetch data THEN we have the result limited by 10', async(() => {
+  it('GIVEN an artistId and numberOfAlbums WHEN we fetch data THEN we have the result limited by 10', async(() => {
     const artistID = 909253;
-    getAlbumByArtistId.handle(artistID).then(res => {
+    const numberAlbumsMax = 10;
+    getAlbumByArtistId.handle(artistID, numberAlbumsMax).then(res => {
       expect(res.resultCount).toBe(11);
     });
   }));

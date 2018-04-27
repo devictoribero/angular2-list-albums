@@ -21,7 +21,9 @@ describe('GetTracksFromAlbumById tests', () => {
 
   it('GIVEN an album id WHEN we fetch data THEN we have the result limited by 3', async(() => {
     const albumID = 909253;
-    getTracksFromAlbumById.handle(albumID, 2).then(res => {
+    const numberAlbumsMax = 2;
+    getTracksFromAlbumById.handle(albumID, numberAlbumsMax).then(res => {
+      console.log(res);
       expect(res.resultCount).toBe(3);
     });
   }));

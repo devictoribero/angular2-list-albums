@@ -1,6 +1,6 @@
 import MusicRequest from '../../Request/MusicRequest';
 import HTTPClient from '../../../infrastructure/http/clients/HTTPClient';
-import AppleMusicClientInterface from '../../../infrastructure/AppleMusic/clients/AppleMusicClientInterface';
+import AppleMusicClientInterface from '../clients/MusicClientInterface';
 import MusicAdapterInterface from './MusicAdapterInterface';
 
 export default class MusicAdapter implements MusicAdapterInterface {
@@ -11,7 +11,9 @@ export default class MusicAdapter implements MusicAdapterInterface {
   }
 
   get(request: MusicRequest): Promise<any> {
-    return this.client.get(this.handleRequest(request));
+    return this.client.get(
+      this.handleRequest(request)
+    );
   }
 
   handleRequest(request: MusicRequest): string {

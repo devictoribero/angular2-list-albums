@@ -9,7 +9,7 @@ export class GetAlbumsByArtistId implements ServiceInterface {
     this.adapter = adapter;
   }
 
-  handle(id: number, limit: number = 10): any {
+  handle(id: number, limit?: number): any {
     return this.adapter.get(
       new MusicRequest(id, 'album', limit)
     );

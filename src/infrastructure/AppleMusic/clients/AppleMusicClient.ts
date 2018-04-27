@@ -1,8 +1,8 @@
 import AppleMusicRequest from '../../../app/Request/MusicRequest';
 import HTTPClient from '../../http/clients/HTTPClient';
-import AppleMusicClientInterface from './AppleMusicClientInterface';
+import MusicClientInterface from '../../../app/album/clients/MusicClientInterface';
 
-export default class AppleMusicClient implements AppleMusicClientInterface {
+export default class AppleMusicClient implements MusicClientInterface {
   public basepath = 'https://itunes.apple.com';
 
   private httpClient: HTTPClient;
