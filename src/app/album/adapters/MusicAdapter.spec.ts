@@ -1,5 +1,5 @@
 import {async} from '@angular/core/testing';
-import HTTPClient from '../../common/http/HTTPClient';
+import HTTPClient from '../../../infrastructure/http/clients/HTTPClient';
 import MusicRequest from '../../Request/MusicRequest';
 import MusicAdapter from './MusicAdapter';
 import MusicAdapterInterface from './MusicAdapterInterface';
@@ -27,5 +27,6 @@ describe('MusicAdapter tests', () => {
           expect(res.resultCount).toBe(11);
         });
       }
-    ));
+    )
+  );
 });

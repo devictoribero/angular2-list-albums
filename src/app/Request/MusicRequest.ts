@@ -3,7 +3,7 @@ export default class MusicRequest {
   private entityType: string;
   private limit: number;
 
-  constructor(artistId: number, entityType: string = null, limit: number = 10) {
+  constructor(artistId: number, entityType: string = null, limit: number = null) {
     this.artistId = artistId;
     this.entityType = entityType;
     this.limit = limit;
@@ -16,7 +16,10 @@ export default class MusicRequest {
     if (this.entityType) {
       queryString += '&entity=' + this.entityType;
     }
-    queryString += '&limit=' + this.limit;
+
+    if (this.limit) {
+      queryString += '&limit=' + this.limit;
+    }
 
     return queryString;
   }

@@ -1,5 +1,5 @@
 import MusicRequest from '../../Request/MusicRequest';
-import HTTPClient from '../../common/http/HTTPClient';
+import HTTPClient from '../../../infrastructure/http/clients/HTTPClient';
 import AppleMusicClientInterface from '../../../infrastructure/AppleMusic/clients/AppleMusicClientInterface';
 import MusicAdapterInterface from './MusicAdapterInterface';
 
