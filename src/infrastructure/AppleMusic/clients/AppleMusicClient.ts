@@ -1,7 +1,8 @@
-import AppleMusicRequest from '../../../app/Request/MusicRequest';
+import {Injectable} from '@angular/core';
 import HTTPClient from '../../http/clients/HTTPClient';
 import MusicClientInterface from '../../../app/album/clients/MusicClientInterface';
 
+@Injectable()
 export default class AppleMusicClient implements MusicClientInterface {
   public basepath = 'https://itunes.apple.com';
 

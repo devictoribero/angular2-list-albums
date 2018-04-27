@@ -12,6 +12,7 @@ export class GetAlbumsByArtistId implements ServiceInterface {
   }
 
   handle(id: number, limit?: number): any {
+    console.log(id);
     return this.adapter.get(
       new MusicRequest(id, 'album', limit)
     );

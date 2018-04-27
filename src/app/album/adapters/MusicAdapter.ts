@@ -1,8 +1,9 @@
+import {Injectable} from '@angular/core';
 import MusicRequest from '../../Request/MusicRequest';
-import HTTPClient from '../../../infrastructure/http/clients/HTTPClient';
 import AppleMusicClientInterface from '../clients/MusicClientInterface';
 import MusicAdapterInterface from './MusicAdapterInterface';
 
+@Injectable
 export default class MusicAdapter implements MusicAdapterInterface {
   private client: AppleMusicClientInterface;
 
