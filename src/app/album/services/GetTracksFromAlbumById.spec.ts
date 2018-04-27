@@ -23,7 +23,6 @@ describe('GetTracksFromAlbumById tests', () => {
     const albumID = 909253;
     const numberAlbumsMax = 2;
     getTracksFromAlbumById.handle(albumID, numberAlbumsMax).then(res => {
-      console.log(res);
       expect(res.resultCount).toBe(3);
     });
   }));

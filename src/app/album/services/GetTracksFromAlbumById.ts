@@ -1,7 +1,9 @@
+import {Injectable} from '@angular/core';
 import ServiceInterface from '../../common/service/ServiceInterface';
 import MusicAdapterInterface from '../adapters/MusicAdapterInterface';
 import MusicRequest from '../../Request/MusicRequest';
 
+@Injectable()
 export class GetTracksFromAlbumById implements ServiceInterface {
   private adapter: MusicAdapterInterface;
 
