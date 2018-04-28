@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import {MOCK_ALBUM_DETAILS} from '../../../mocks/album';
+import {MOCK_ALBUM_DETAILS} from '../../../../mocks/album';
 
 @Component({
     selector: 'app-album-details',

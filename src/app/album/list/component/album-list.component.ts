@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
-import Album from '../entity/Album';
+import Album from '../../entity/Album';
 import {GetAlbumsByArtistId} from '../services/GetAlbumsByArtistId';
+import Artist from '../../../Artist/entity/Artist';
 
 @Component({
   selector: 'app-album-list',
@@ -10,6 +11,7 @@ import {GetAlbumsByArtistId} from '../services/GetAlbumsByArtistId';
 
 export class AlbumListComponent implements OnInit {
   title: string = 'My music list';
+  artist: Artist;
   albums: Array<Album> = [];
   getAlbumsByArtistService: GetAlbumsByArtistId;
 
@@ -19,6 +21,9 @@ export class AlbumListComponent implements OnInit {
 
   ngOnInit() {
     const idJackJohnson = 909253;
-    this.albums = this.getAlbumsByArtistService.handle(idJackJohnson);
+    this.getAlbumsByArtistService.handle(idJackJohnson).then(result => {
+      this.albums = result.albums;
+      this.artist = result.artist;
+    });
   }
 }

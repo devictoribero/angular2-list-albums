@@ -1,8 +1,8 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {AlbumListComponent} from './album/list/album-list.component';
-import {AlbumDetailsComponent} from './album/details/album-details.component';
+import {AlbumListComponent} from './album/list/component/album-list.component';
+import {AlbumDetailsComponent} from './album/details/component/album-details.component';
 
 export const router: Routes = [
   {path: '', redirectTo: '/albums', pathMatch: 'full'},

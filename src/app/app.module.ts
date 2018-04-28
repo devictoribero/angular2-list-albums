@@ -4,14 +4,13 @@ import { NgModule } from '@angular/core';
 import {routes} from './app.router';
 
 import { AppComponent } from './app.component';
-import {AlbumListComponent} from './album/list/album-list.component';
-import {AlbumDetailsComponent} from './album/details/album-details.component';
-import {GetAlbumsByArtistId} from './album/services/GetAlbumsByArtistId';
-import {GetTracksFromAlbumById} from './album/services/GetTracksFromAlbumById';
-import MusicAdapter from './album/adapters/MusicAdapter';
-import {ClientRequest} from 'http';
 import HTTPClient from '../infrastructure/http/clients/HTTPClient';
 import AppleMusicClient from '../infrastructure/AppleMusic/clients/AppleMusicClient';
+import MusicAdapter from './album/adapters/MusicAdapter';
+import {AlbumListComponent} from './album/list/component/album-list.component';
+import {AlbumDetailsComponent} from './album/details/component/album-details.component';
+import {GetAlbumsByArtistId} from './album/list/services/GetAlbumsByArtistId';
+import {GetTracksFromAlbumById} from './album/details/services/GetTracksFromAlbumById';
 
 
 @NgModule({

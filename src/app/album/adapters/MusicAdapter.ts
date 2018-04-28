@@ -1,20 +1,25 @@
-import {Injectable} from '@angular/core';
 import MusicRequest from '../../Request/MusicRequest';
 import AppleMusicClientInterface from '../clients/MusicClientInterface';
 import MusicAdapterInterface from './MusicAdapterInterface';
+import TransformerInterface from '../../common/transformer/TransformerInterface';
 
-@Injectable
 export default class MusicAdapter implements MusicAdapterInterface {
+  private transformer: TransformerInterface;
   private client: AppleMusicClientInterface;
 
-  constructor(client: AppleMusicClientInterface) {
+  constructor(transformer: TransformerInterface, client: AppleMusicClientInterface) {
+    this.transformer = transformer;
     this.client = client;
   }
 
   get(request: MusicRequest): Promise<any> {
-    return this.client.get(
-      this.handleRequest(request)
-    );
+    return new Promise((resolve, reject) => {
+      resolve(
+        this.client
+          .get(this.handleRequest(request))
+          .then(res => this.transformer.handle(res))
+      );
+    });
   }
 
   handleRequest(request: MusicRequest): string {

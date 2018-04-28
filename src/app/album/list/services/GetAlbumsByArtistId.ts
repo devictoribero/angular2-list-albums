@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import ServiceInterface from '../../common/service/ServiceInterface';
-import MusicAdapterInterface from '../adapters/MusicAdapterInterface';
-import MusicRequest from '../../Request/MusicRequest';
+import ServiceInterface from '../../../common/service/ServiceInterface';
+import MusicAdapterInterface from '../../adapters/MusicAdapterInterface';
+import MusicRequest from '../../../Request/MusicRequest';
 
 @Injectable()
 export class GetAlbumsByArtistId implements ServiceInterface {
@@ -11,8 +11,7 @@ export class GetAlbumsByArtistId implements ServiceInterface {
     this.adapter = adapter;
   }
 
-  handle(id: number, limit?: number): any {
-    console.log(id);
+  handle(id: number, limit?: number): Promise<any> {
     return this.adapter.get(
       new MusicRequest(id, 'album', limit)
     );
