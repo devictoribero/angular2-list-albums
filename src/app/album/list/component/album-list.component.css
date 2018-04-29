@@ -1,33 +1,34 @@
 .album-list {
     padding: 40px;
+    background: #1a1a1a;
 }
+
 .album-list__title {
+    font-family: Raleway;
     color: white;
-    margin: 0 0 20px 0;
-    font-size: 32px;
-    font-family: Serif;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
 }
 
 .album-list__album-list {
-    background: #1a1a1a;
     padding: 0;
     margin: 0;
 }
 
-.album-list__album-link {
+.album-list__album-element-wrapper {
     text-decoration: none;
     display: block;
 }
 
-.album-list__album-link:not(:first-child) {
+.album-list__album-element-wrapper:not(:first-child) {
     border-top: 1px solid #212121;
 }
 
-.album-list__album-item {
+.album-list__album-element {
     display: flex;
-    font-family: sans-serif;
-    align-items: center;
-    padding: 10px 0;
+    align-items: flex-start;
+    padding: 15px 0;
 }
 
 .album-list__album-thumbnail {
@@ -38,25 +39,47 @@
     border-radius: 3px;
 }
 
-
-.album-list__album-specifications {
+.album-list__album-details {
     margin-left: 10px;
 }
 
+.album-list__album-num-of-songs,
 .album-list__album-name {
-    font-weight: bold;
-    font-size: 16px;
-    color: white;
+    font-family: 'Raleway', sans-serif;
 }
 
-.album-list__album-num-of-songs {
+.album-list__album-name {
+    font-weight: 600;
+    font-size: 16px;
     color: white;
-    font-style: italic;
-    font-size: 10px;
+    display: block;
 }
 
 .album-list__album-author {
     color: #e0e1e2;
     font-style: italic;
-    font-size: 14px;
+    font-size: 12px;
+    margin-right: 5px;
 }
+
+.album-list__album-num-of-songs {
+    position: relative;
+    display: inline-block;
+    padding-left: 7px;
+    margin: 0;
+    color: white;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.album-list__album-num-of-songs:before {
+    content: '';
+    height: 2px;
+    width: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    border-radius: 500px;
+}
+

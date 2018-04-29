@@ -7,10 +7,10 @@ import Artist from '../../../Artist/entity/Artist';
   selector: 'app-album-list',
   templateUrl: './album-list.component.html',
   styleUrls: ['./album-list.component.css'],
+  providers: [GetAlbumsByArtistId]
 })
 
 export class AlbumListComponent implements OnInit {
-  title: string = 'My music list';
   artist: Artist;
   albums: Array<Album> = [];
   getAlbumsByArtistService: GetAlbumsByArtistId;
