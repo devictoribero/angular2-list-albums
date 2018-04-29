@@ -13,7 +13,7 @@ import Artist from '../../../Artist/entity/Artist';
 export class AlbumListComponent implements OnInit {
   artist: Artist;
   albums: Array<Album> = [];
-  getAlbumsByArtistService: GetAlbumsByArtistId;
+  private getAlbumsByArtistService: GetAlbumsByArtistId;
 
   constructor(service: GetAlbumsByArtistId) {
     this.getAlbumsByArtistService = service;

@@ -2,9 +2,9 @@
   <h1 class="album-list__title">My Music List</h1>
   <ul class="album-list__album-list" role='list'>
 
-    <a [routerLink]="['/albums', album.id]" class="album-list__album-element-wrapper" *ngFor="let album of albums"
-       role="link">
-      <li class="album-list__album-element" role='listitem'>
+    <li class="album-list__album-element-wrapper" role='listitem' *ngFor="let album of albums">
+      <a [routerLink]="['/albums', album.id]" class="album-list__album-element"
+         role="link">
         <img class="album-list__album-thumbnail" src="{{album.thumbnail_url}}"
              alt="Cover of the {{album.name}} album">
 
@@ -13,8 +13,8 @@
           <cite class="album-list__album-author">{{album.author}}</cite>
           <dd class="album-list__album-num-of-songs">{{album.numOfSongs}} songs</dd>
         </div>
-      </li>
-    </a>
+      </a>
+    </li>
 
   </ul>
 </section>

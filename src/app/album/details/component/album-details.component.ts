@@ -4,6 +4,7 @@ import {GetAlbumsByArtistId} from '../../list/services/GetAlbumsByArtistId';
 import Artist from '../../../Artist/entity/Artist';
 import Track from '../../../track/entity/Track';
 import {GetTracksFromAlbumById} from '../services/GetTracksFromAlbumById';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-album-details',
@@ -14,17 +15,22 @@ import {GetTracksFromAlbumById} from '../services/GetTracksFromAlbumById';
 export class AlbumDetailsComponent implements OnInit {
   artist: Artist;
   tracks: Array<Track> = [];
-  getTracksFromAlbumById: GetTracksFromAlbumById;
+  private getTracksFromAlbumById: GetTracksFromAlbumById;
+  private route: ActivatedRoute;
 
-  constructor(service: GetTracksFromAlbumById) {
+  constructor(service: GetTracksFromAlbumById, route: ActivatedRoute) {
     this.getTracksFromAlbumById = service;
+    this.route = route;
   }
 
   ngOnInit() {
-    const albumId = 909253;
-    this.getTracksFromAlbumById.handle(albumId).then(result => {
-      this.tracks = result.tracks;
-      this.artist = result.artist;
+    this.route.params.subscribe(params => {
+      const albumId = +params['id'];
+
+      this.getTracksFromAlbumById.handle(albumId).then(result => {
+        this.tracks = result.tracks;
+        this.artist = result.artist;
+      });
     });
   }
 }
