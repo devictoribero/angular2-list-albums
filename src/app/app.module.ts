@@ -24,11 +24,6 @@ import {GetTracksFromAlbumById} from './album/details/services/GetTracksFromAlbu
     routes
   ],
   providers: [
-    HTTPClient,
-    AppleMusicClient,
-    MusicAdapter,
-    GetAlbumsByArtistId,
-    GetTracksFromAlbumById,
   ],
   bootstrap: [AppComponent]
 })

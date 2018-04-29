@@ -12,18 +12,19 @@ export default class GetTracksFromAlbumByIdTransformer implements TransformerInt
 
     const artist = new Artist(artistId, artistLinkUrl, artistName, primaryGenreName);
 
-    const albums = responseFromAPI.results.filter(each => each.collectionType === 'Album')
+    const thumbnail = responseFromAPI.results[1].artworkUrl100;
+
+    const tracks = responseFromAPI.results.filter(each => each.collectionType === 'Album')
       .map(each => new Track(
         each.trackId,
         each.trackName,
         each.artistName,
-        each.artworkUrl60,
         each.trackPrice,
         each.trackTimeMillis,
         )
       );
 
-    return new AlbumListDTO(artist, albums);
+    return new AlbumDetailsDTO(artist, thumbnail, tracks);
   }
 }
 

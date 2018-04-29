@@ -23,7 +23,7 @@ export class AlbumDetailsComponent implements OnInit {
   ngOnInit() {
     const albumId = 909253;
     this.getTracksFromAlbumById.handle(albumId).then(result => {
-      this.tracks = result.albums;
+      this.tracks = result.tracks;
       this.artist = result.artist;
     });
   }

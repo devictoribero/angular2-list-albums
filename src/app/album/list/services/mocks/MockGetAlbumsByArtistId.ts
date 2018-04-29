@@ -1,8 +1,9 @@
-import {GetAlbumsByArtistId} from '../../list/services/GetAlbumsByArtistId';
-import Album from '../../entity/Album';
+import {GetAlbumsByArtistId} from '../GetAlbumsByArtistId';
+import Album from '../../../entity/Album';
 
-export class MockGetAlbumsByArtistId extends GetAlbumsByArtistId{
-  handle(artistId): Promise<any> {
+export class MockGetAlbumsByArtistId extends GetAlbumsByArtistId {
+
+  handle(id: number, limit?: number): Promise<any> {
     return new Promise ((resolve, reject) => {
       resolve(
         [

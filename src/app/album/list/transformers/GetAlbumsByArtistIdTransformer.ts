@@ -16,7 +16,7 @@ export default class GetAlbumsByArtistIdTransformer implements TransformerInterf
         each.amgArtistId,
         each.collectionName,
         each.artistName,
-        each.artworkUrl60,
+        each.artworkUrl100,
         each.collectionPrice,
         )
       );

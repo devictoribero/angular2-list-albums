@@ -3,12 +3,14 @@ import Track from '../../../track/entity/Track';
 
 export default class AlbumDetailsDTO {
   private _artist: Artist;
+  private _albumThumbnail: string;
   private _totalTracks: number;
   private _tracks: Array<Track>;
 
-  constructor(artist: Artist, tracks: Array<Track>) {
+  constructor(artist: Artist, thumbnail: string, tracks: Array<Track>) {
     this._artist = artist;
     this._tracks = tracks;
+    this._albumThumbnail = thumbnail;
     this._totalTracks = tracks.length;
   }
 
@@ -18,6 +20,14 @@ export default class AlbumDetailsDTO {
 
   set artist(value: Artist) {
     this._artist = value;
+  }
+
+  get albumThumbnail(): string {
+    return this._albumThumbnail;
+  }
+
+  set albumThumbnail(value: string) {
+    this._albumThumbnail = value;
   }
 
   get totalTracks(): number {

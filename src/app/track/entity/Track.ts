@@ -2,15 +2,13 @@ export default class Track {
   private _id: number;
   private _name: string;
   private _author: string;
-  private _thumbnail_url: string;
   private _price: number;
   private _timeMiliseconds: number;
 
-  constructor(id: number, name: string, author: string, thumbnail_url: string, price: number, timeMiliseconds: number) {
+  constructor(id: number, name: string, author: string, price: number, timeMiliseconds: number) {
     this._id = id;
     this._name = name;
     this._author = author;
-    this._thumbnail_url = thumbnail_url;
     this._price = price;
     this._timeMiliseconds = timeMiliseconds;
   }
@@ -37,14 +35,6 @@ export default class Track {
 
   set author(value: string) {
     this._author = value;
-  }
-
-  get thumbnail_url(): string {
-    return this._thumbnail_url;
-  }
-
-  set thumbnail_url(value: string) {
-    this._thumbnail_url = value;
   }
 
   get price(): number {

@@ -6,6 +6,7 @@ import HTTPClient from '../../../../infrastructure/http/clients/HTTPClient';
 import {async} from '@angular/core/testing';
 import {GetTracksFromAlbumById} from './GetTracksFromAlbumById';
 import GetAlbumsByArtistIdTransformer from '../../list/transformers/GetAlbumsByArtistIdTransformer';
+import GetTracksFromAlbumByIdTransformer from '../transformers/GetTracksFromAlbumByIdTransformer';
 
 describe('GetTracksFromAlbumById tests', () => {
   let getTracksFromAlbumById: ServiceInterface;
@@ -13,7 +14,7 @@ describe('GetTracksFromAlbumById tests', () => {
   beforeEach(() => {
     getTracksFromAlbumById = new GetTracksFromAlbumById(
       new MusicAdapter(
-        new GetAlbumsByArtistIdTransformer(),
+        new GetTracksFromAlbumByIdTransformer(),
         new AppleMusicClient(
           new HTTPClient()
         )

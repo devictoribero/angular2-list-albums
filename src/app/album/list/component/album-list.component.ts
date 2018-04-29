@@ -15,8 +15,8 @@ export class AlbumListComponent implements OnInit {
   albums: Array<Album> = [];
   getAlbumsByArtistService: GetAlbumsByArtistId;
 
-  constructor(getAlbumsByArtist: GetAlbumsByArtistId) {
-    this.getAlbumsByArtistService = getAlbumsByArtist;
+  constructor(service: GetAlbumsByArtistId) {
+    this.getAlbumsByArtistService = service;
   }
 
   ngOnInit() {
