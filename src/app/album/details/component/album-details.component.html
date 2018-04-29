@@ -1,11 +1,27 @@
-<main class="album">
-  <header class="album-header">
-    <h1 class="album-title">Album's track</h1>
+<div class="album">
+  <header class="album__header">
+    <img src="" alt="">
+    <div class="album__header-details">
+      <h1 class="album__title">Album's track</h1>
+      <h2 class="album__author">Album's author name</h2>
+    </div>
   </header>
-  <ul class="album__tracks-list" role="list">
-    <li class="album__track" *ngFor="let track of album.tracks">
-      <span class="album__track-name">nombre de la cancion</span>
-      <span class="album__track-name">123123123</span>
+
+  <ul class="album__track-list" role="list">
+    <li class="album__track" *ngFor="let track of tracks">
+      <cite class="album__track-name">{{track.name}}</cite>
+      <span class="album__track-duration">{{track.duration}}ms</span>
     </li>
   </ul>
-</main>
+</div>
+
+<div class="album">
+  <header class="album__header">
+    <img class="album__thumbnail" src="https://is3-ssl.mzstatic.com/image/thumb/Music2/v4/ac/7d/de/ac7dded0-b96c-b4db-d722-f35cef03dcfb/UMG_cvrart_00602537293308_01_RGB72_1500x1500_12UMGIM46900.jpg/1200x630bb.jpg" alt="">
+    <div class="album__header-details">
+      <h1 class="album__title">Evolve</h1>
+      <h2 class="album__author">Imagine Dragons</h2>
+    </div>
+  </header>
+
+</div>
