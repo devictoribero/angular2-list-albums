@@ -6,7 +6,7 @@ import Artist from '../../../Artist/entity/Artist';
 @Component({
   selector: 'app-album-list',
   templateUrl: './album-list.component.html',
-  styleUrls: ['./album-list.component.css'],
+  styleUrls: ['./album-list.component.sass'],
   providers: [GetAlbumsByArtistId]
 })
 

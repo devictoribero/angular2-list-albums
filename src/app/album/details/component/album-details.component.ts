@@ -9,7 +9,7 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 @Component({
   selector: 'app-album-details',
   templateUrl: './album-details.component.html',
-  styleUrls: ['./album-details.component.css'],
+  styleUrls: ['./album-details.component.sass'],
 })
 
 export class AlbumDetailsComponent implements OnInit {

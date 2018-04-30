@@ -1,0 +1,84 @@
+@import "../../../../styles/sass/_variables/_palette"
+@import "../../../../styles/sass/_variables/_font/_family"
+@import "../../../../styles/sass/_variables/_font/_size"
+@import "../../../../styles/sass/_variables/_font/_weight"
+@import "../../../../styles/sass/_variables/_separators/_margins"
+@import "../../../../styles/sass/_variables/_border/_radius"
+
+$album-thumbnail-size: 50px
+$list-child-border-width: 1px
+$num-of-songs-ball-size: 2px
+$list-child-inner-vertical-distance: 15px
+$list-child-inner-horizontal-distance: 0
+
+.album-list
+  padding: 40px
+  background: $black
+
+  .album-list__title
+    font-family: $fontFamily-primary
+    color: $white
+    font-size: $font-size-x-large
+    font-weight: $font-weight-x-bold
+    margin: 0 0 $common-margin-medium 0
+
+  .album-list__album-list
+    padding: 0
+    margin: 0
+
+  .album-list__album-element-wrapper
+    text-decoration: none
+    display: block
+
+  .album-list__album-element-wrapper:not(:first-child)
+    border-top: $list-child-border-width solid $black-lighter
+
+  .album-list__album-element
+    display: flex
+    align-items: flex-start
+    padding: $list-child-inner-vertical-distance $list-child-inner-horizontal-distance
+
+  .album-list__album-thumbnail
+    width: $album-thumbnail-size
+    max-width: $album-thumbnail-size
+    height: $album-thumbnail-size
+    max-height: $album-thumbnail-size
+    border-radius: $border-radius-rounded
+
+  .album-list__album-details
+    margin-left: $common-margin-medium
+
+  .album-list__album-num-of-songs,
+  .album-list__album-name
+    font-family: $fontFamily-primary
+
+  .album-list__album-name
+    font-weight: $font-weight-bold
+    font-size: $font-size-medium
+    color: $white
+    display: block
+
+  .album-list__album-author
+    color: $white-darker
+    font-style: italic
+    font-size: $font-size-small
+    margin-right: $common-margin-small
+
+  .album-list__album-num-of-songs
+    position: relative
+    display: inline-block
+    padding-left: 7px
+    margin: 0
+    color: $white
+    font-size: $font-size-x-small
+    font-style: italic
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 5px
+      height: $num-of-songs-ball-size
+      width: $num-of-songs-ball-size
+      border-radius: $border-radius-circle
+      background: $white
+

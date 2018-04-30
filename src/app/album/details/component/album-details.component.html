@@ -1,9 +1,9 @@
 <div class="album">
   <header class="album__header">
-    <img src="" alt="">
+    <img src="{{album.thumbnail}}" alt="Cover image of {{album.name}}">
     <div class="album__header-details">
-      <h1 class="album__title">Album's track</h1>
-      <h2 class="album__author">Album's author name</h2>
+      <h1 class="album__title">{{album.name}}</h1>
+      <h2 class="album__author">{{album.artist}}</h2>
     </div>
   </header>
 
@@ -13,15 +13,4 @@
       <span class="album__track-duration">{{track.duration}}ms</span>
     </li>
   </ul>
-</div>
-
-<div class="album">
-  <header class="album__header">
-    <img class="album__thumbnail" src="https://is3-ssl.mzstatic.com/image/thumb/Music2/v4/ac/7d/de/ac7dded0-b96c-b4db-d722-f35cef03dcfb/UMG_cvrart_00602537293308_01_RGB72_1500x1500_12UMGIM46900.jpg/1200x630bb.jpg" alt="">
-    <div class="album__header-details">
-      <h1 class="album__title">Evolve</h1>
-      <h2 class="album__author">Imagine Dragons</h2>
-    </div>
-  </header>
-
 </div>

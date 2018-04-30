@@ -1,0 +1,76 @@
+@import "../../../../styles/sass/_variables/_palette"
+@import "../../../../styles/sass/_variables/_font/_family"
+@import "../../../../styles/sass/_variables/_font/_size"
+@import "../../../../styles/sass/_variables/_font/_weight"
+@import "../../../../styles/sass/_variables/_separators/_margins"
+
+$album-thumbnail-size: 150px
+$list-child-border-width: 1px
+$track-inner-vertical-distance: 15px
+$track-inner-horizontal-distance: 0
+
+.album
+  padding: 40px
+  background: $black
+
+  .album__header
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+  .album__thumbnail
+    width: $album-thumbnail-size
+    max-width: $album-thumbnail-size
+    height: $album-thumbnail-size
+    max-height: $album-thumbnail-size
+    display: block
+
+  .album__header-details
+    margin-top: $common-margin-large
+
+  .album__author,
+  .album__title
+    font-family: $fontFamily-primary
+    color: $white
+    text-align: center
+
+  .album__title
+    font-size: $font-size-big
+    font-weight: $font-weight-x-bold
+    margin: 0
+
+  .album__author
+    text-transform: uppercase
+    font-weight: $font-weight-light
+    font-size: $font-size-medium
+    margin-top: $common-margin-small
+
+  .album__track-list
+    margin: 0
+    padding:  0
+
+  .album__track
+    list-style: none
+    padding: $track-inner-vertical-distance $track-inner-horizontal-distance
+    position: relative
+
+  .album__track:not(:first-child)
+    border-top: $list-child-border-width solid $black-lighter
+
+  .album__track-number,
+  .album__track-name,
+  .album__track-duration
+    color: $white-darker
+
+  .album__track-name
+    font-family: $fontFamily-primary
+    font-weight: $font-weight-bold
+    font-style: inherit
+    display: block
+    letter-spacing: 0.25px
+    line-height: 24px
+    font-size: $font-size-large
+
+  .album__track-duration
+    font-family: $fontFamily-secondary
+    font-size: $font-size-x-small
