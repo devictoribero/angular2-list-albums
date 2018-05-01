@@ -2,7 +2,7 @@ import Album from '../../entity/Album';
 import Artist from '../../../Artist/entity/Artist';
 import Track from '../../../Track/Entity/Track';
 import AlbumDetailsDTO from '../DTO/AlbumDetailsDTO';
-import TransformerAbstractClass from '../../../Common/Transformer/TransformerAbstractClass';
+import TransformerAbstractClass from '../../../Common/Transformer/CommonTransformer';
 
 
 export default class GetTracksFromAlbumByIdTransformer extends TransformerAbstractClass {

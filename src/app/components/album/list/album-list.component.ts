@@ -4,7 +4,7 @@ import {GetAlbumsByArtistId} from '../../../album/list/services/GetAlbumsByArtis
 import Artist from '../../../Artist/entity/Artist';
 import AlbumService from '../../../album/services/AlbumService';
 import GetAlbumsByArtistIdTransformer from '../../../album/list/transformers/GetAlbumsByArtistIdTransformer';
-import TransformerAbstractClass from '../../../Common/Transformer/TransformerAbstractClass';
+import TransformerAbstractClass from '../../../Common/Transformer/CommonTransformer';
 
 @Component({
   selector: 'app-album-list',

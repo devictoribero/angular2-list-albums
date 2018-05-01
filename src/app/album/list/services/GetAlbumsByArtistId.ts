@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import MusicRequest from '../../../Request/MusicRequest';
 import AlbumService from '../../services/AlbumService';
-import MusicAbstractAdapter from '../../adapters/CommonAdapter';
+import MusicAbstractAdapter from '../../../Common/Adapter/CommonAdapter';
 
 @Injectable()
 export class GetAlbumsByArtistId extends AlbumService {

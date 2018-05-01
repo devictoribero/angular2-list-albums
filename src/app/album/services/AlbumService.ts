@@ -1,5 +1,5 @@
 import ServiceInterface from '../../Common/Service/ServiceInterface';
-import MusicAbstractAdapter from '../adapters/CommonAdapter';
+import MusicAbstractAdapter from '../../Common/Adapter/CommonAdapter';
 
 export default abstract class AlbumService implements ServiceInterface {
   protected adapter: MusicAbstractAdapter;

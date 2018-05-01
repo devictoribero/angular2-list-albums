@@ -1,7 +1,7 @@
 import MusicRequest from '../../Request/MusicRequest';
-import AppleMusicClientInterface from '../clients/MusicClientInterface';
+import AppleMusicClientInterface from '../../album/clients/MusicClientInterface';
 import MusicAdapterInterface, {default as CommonAdapterInterface} from './CommonAdapterInterface';
-import TransformerInterface from '../../Common/Transformer/TransformerInterface';
+import TransformerInterface from '../Transformer/CommonTransformerInterface';
 
 export default abstract class CommonAdapter implements CommonAdapterInterface {
   protected transformer: TransformerInterface;
