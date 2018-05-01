@@ -8,7 +8,12 @@ export default class GetAlbumsByArtistIdTransformer extends TransformerAbstractC
 
   handle(responseFromAPI: any): AlbumListDTO {
 
-    const {artistId, artistLinkUrl, artistName, primaryGenreName} = responseFromAPI.results[0];
+    const {
+      artistId,
+      artistLinkUrl,
+      artistName,
+      primaryGenreName
+    } = responseFromAPI.results[0];
 
     const artist = new Artist(artistId, artistLinkUrl, artistName, primaryGenreName);
 

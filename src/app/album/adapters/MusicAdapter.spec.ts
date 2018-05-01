@@ -3,7 +3,7 @@ import HTTPClient from '../../../infrastructure/http/clients/HTTPClient';
 import MusicRequest from '../../Request/MusicRequest';
 import MusicAdapter from './MusicAdapter';
 import MusicAdapterInterface from '../../Common/Adapter/CommonAdapterInterface';
-import AppleMusicClient from '../../../infrastructure/AppleMusic/clients/AppleMusicClient';
+import AppleMusicClient from '../../../infrastructure/AppleMusic/clients/MusicClient';
 import GetAlbumsByArtistIdTransformer from '../list/transformers/GetAlbumsByArtistIdTransformer';
 
 describe('MusicAdapter tests', () => {

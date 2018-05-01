@@ -1,21 +1,21 @@
 import { Component, OnInit} from '@angular/core';
-import Album from '../../../album/entity/Album';
-import {GetAlbumsByArtistId} from '../../../album/list/services/GetAlbumsByArtistId';
-import Artist from '../../../Artist/entity/Artist';
-import AlbumService from '../../../album/services/AlbumService';
-import GetAlbumsByArtistIdTransformer from '../../../album/list/transformers/GetAlbumsByArtistIdTransformer';
-import TransformerAbstractClass from '../../../Common/Transformer/CommonTransformer';
+import Album from '../../../../app/album/entity/Album';
+import {GetAlbumsByArtistId} from '../../../../app/album/list/services/GetAlbumsByArtistId';
+import Artist from '../../../../app/Artist/entity/Artist';
+import MusicService from '../../../../app/album/services/MusicService';
+import GetAlbumsByArtistIdTransformer from '../../../../app/album/list/transformers/GetAlbumsByArtistIdTransformer';
+import CommonTransformer from '../../../../app/Common/Transformer/CommonTransformer';
 
 @Component({
   selector: 'app-album-list',
   templateUrl: './album-list.component.html',
   styleUrls: ['./album-list.component.sass'],
   providers: [{
-    provide: AlbumService,
+    provide: MusicService,
     useClass: GetAlbumsByArtistId
   },
   {
-    provide: TransformerAbstractClass,
+    provide: CommonTransformer,
     useClass: GetAlbumsByArtistIdTransformer
   },
   ]

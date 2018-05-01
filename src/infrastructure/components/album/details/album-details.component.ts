@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import Album from '../../../album/entity/Album';
-import {GetAlbumsByArtistId} from '../../../album/list/services/GetAlbumsByArtistId';
-import Artist from '../../../Artist/entity/Artist';
-import Track from '../../../Track/Entity/Track';
-import {GetTracksFromAlbumById} from '../../../album/details/services/GetTracksFromAlbumById';
+import Album from '../../../../app/album/entity/Album';
+import {GetAlbumsByArtistId} from '../../../../app/album/list/services/GetAlbumsByArtistId';
+import Artist from '../../../../app/Artist/entity/Artist';
+import Track from '../../../../app/Track/Entity/Track';
+import {GetTracksFromAlbumById} from '../../../../app/album/details/services/GetTracksFromAlbumById';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
