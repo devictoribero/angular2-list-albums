@@ -1,15 +1,13 @@
 import MusicRequest from '../../Request/MusicRequest';
 import AppleMusicClientInterface from '../clients/MusicClientInterface';
-import MusicAdapterInterface from './MusicAdapterInterface';
+import MusicAdapterInterface from './CommonAdapterInterface';
 import TransformerInterface from '../../Common/Transformer/TransformerInterface';
+import MusicAbstractAdapter from './CommonAdapter';
 
-export default class MusicAdapter implements MusicAdapterInterface {
-  private transformer: TransformerInterface;
-  private client: AppleMusicClientInterface;
+export default class MusicAdapter extends MusicAbstractAdapter {
 
   constructor(transformer: TransformerInterface, client: AppleMusicClientInterface) {
-    this.transformer = transformer;
-    this.client = client;
+    super(transformer, client);
   }
 
   get(request: MusicRequest): Promise<any> {

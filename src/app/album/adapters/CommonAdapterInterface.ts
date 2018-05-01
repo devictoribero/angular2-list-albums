@@ -1,6 +1,6 @@
 import MusicRequest from '../../Request/MusicRequest';
 
-export default interface MusicAdapterInterface {
+export default interface CommonAdapterInterface {
 
   get(request: MusicRequest): Promise<any>;
 

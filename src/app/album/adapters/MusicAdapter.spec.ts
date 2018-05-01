@@ -2,7 +2,7 @@ import {async} from '@angular/core/testing';
 import HTTPClient from '../../../infrastructure/http/clients/HTTPClient';
 import MusicRequest from '../../Request/MusicRequest';
 import MusicAdapter from './MusicAdapter';
-import MusicAdapterInterface from './MusicAdapterInterface';
+import MusicAdapterInterface from './CommonAdapterInterface';
 import AppleMusicClient from '../../../infrastructure/AppleMusic/clients/AppleMusicClient';
 import GetAlbumsByArtistIdTransformer from '../list/transformers/GetAlbumsByArtistIdTransformer';
 

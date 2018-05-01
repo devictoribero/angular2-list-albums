@@ -2,12 +2,23 @@ import { Component, OnInit} from '@angular/core';
 import Album from '../../../album/entity/Album';
 import {GetAlbumsByArtistId} from '../../../album/list/services/GetAlbumsByArtistId';
 import Artist from '../../../Artist/entity/Artist';
+import AlbumService from '../../../album/services/AlbumService';
+import GetAlbumsByArtistIdTransformer from '../../../album/list/transformers/GetAlbumsByArtistIdTransformer';
+import TransformerAbstractClass from '../../../Common/Transformer/TransformerAbstractClass';
 
 @Component({
   selector: 'app-album-list',
   templateUrl: './album-list.component.html',
   styleUrls: ['./album-list.component.sass'],
-  providers: [GetAlbumsByArtistId]
+  providers: [{
+    provide: AlbumService,
+    useClass: GetAlbumsByArtistId
+  },
+  {
+    provide: TransformerAbstractClass,
+    useClass: GetAlbumsByArtistIdTransformer
+  },
+  ]
 })
 
 export class AlbumListComponent implements OnInit {
