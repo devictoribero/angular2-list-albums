@@ -19,7 +19,7 @@ describe('MusicAdapter tests', () => {
   it('GIVEN a request WHEN we handle it THEN it is well transformed to be used by the client',
     async(() => {
       const request = new MusicRequest(909253, 'album', 10);
-      const requestPrepared = 'id=909253&entity=album&limit=10';
+      const requestPrepared = 'id=909253&Entity=album&limit=10';
       expect(musicAdapter.handleRequest(request)).toBe(requestPrepared);
     }
   ));

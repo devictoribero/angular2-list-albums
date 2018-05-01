@@ -1,10 +1,11 @@
 import Album from '../../entity/Album';
 import Artist from '../../../Artist/entity/Artist';
-import TransformerInterface from '../../../common/transformer/TransformerInterface';
-import Track from '../../../track/entity/Track';
+import Track from '../../../Track/Entity/Track';
 import AlbumDetailsDTO from '../DTO/AlbumDetailsDTO';
+import TransformerAbstractClass from '../../../Common/Transformer/TransformerAbstractClass';
 
-export default class GetTracksFromAlbumByIdTransformer implements TransformerInterface {
+
+export default class GetTracksFromAlbumByIdTransformer extends TransformerAbstractClass {
 
   handle(responseFromAPI: any): AlbumDetailsDTO {
 

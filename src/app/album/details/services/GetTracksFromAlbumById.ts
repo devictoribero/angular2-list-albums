@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import ServiceInterface from '../../../common/service/ServiceInterface';
+import ServiceInterface from '../../../Common/Service/ServiceInterface';
 import MusicAdapterInterface from '../../adapters/MusicAdapterInterface';
 import MusicRequest from '../../../Request/MusicRequest';
 

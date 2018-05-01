@@ -1,4 +1,4 @@
-import ServiceInterface from '../../../common/service/ServiceInterface';
+import ServiceInterface from '../../../Common/Service/ServiceInterface';
 import {GetAlbumsByArtistId} from '../../list/services/GetAlbumsByArtistId';
 import MusicAdapter from '../../adapters/MusicAdapter';
 import AppleMusicClient from '../../../../infrastructure/AppleMusic/clients/AppleMusicClient';

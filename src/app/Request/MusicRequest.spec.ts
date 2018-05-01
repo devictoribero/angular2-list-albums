@@ -10,7 +10,7 @@ describe('MusicRequest unit tests', () => {
 
   it('GIVEN a musicRequest with artistId and entityType THEN the querystring is well formatted', () => {
     const request = new MusicRequest(1, 'album');
-    const suposedResult = 'id=1&entity=album';
+    const suposedResult = 'id=1&Entity=album';
     expect(request.getQueryString()).toBe(suposedResult);
   });
 
@@ -22,7 +22,7 @@ describe('MusicRequest unit tests', () => {
 
   it('GIVEN a musicRequest with artistId, entityType and queryLimit THEN the querystring is well formatted', () => {
     const request = new MusicRequest(1, 'album', 10);
-    const suposedResult = 'id=1&entity=album&limit=10';
+    const suposedResult = 'id=1&Entity=album&limit=10';
     expect(request.getQueryString()).toBe(suposedResult);
   });
 });

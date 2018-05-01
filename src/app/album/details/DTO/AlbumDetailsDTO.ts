@@ -1,5 +1,5 @@
 import Artist from '../../../Artist/entity/Artist';
-import Track from '../../../track/entity/Track';
+import Track from '../../../Track/Entity/Track';
 
 export default class AlbumDetailsDTO {
   private _name: string;

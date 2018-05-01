@@ -8,7 +8,7 @@ describe('HTTPClient unit tests', () => {
   });
 
   it('the GET petition works perfectly', async(() => {
-    const _getFrom = 'https://itunes.apple.com/lookup?amgArtistId=468749,5723&entity=album&limit=5';
+    const _getFrom = 'https://itunes.apple.com/lookup?amgArtistId=468749,5723&Entity=album&limit=5';
     httpclient.get(_getFrom).then(res => {
       expect(res.resultCount).toBe(12);
     });

@@ -17,7 +17,7 @@ export default class MusicRequest {
 
     queryString += 'id=' + this.artistId;
     if (this.entityType) {
-      queryString += '&entity=' + this.entityType;
+      queryString += '&Entity=' + this.entityType;
     }
 
     if (this.limit) {

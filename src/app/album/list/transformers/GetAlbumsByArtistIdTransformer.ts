@@ -1,9 +1,10 @@
 import AlbumListDTO from '../DTO/AlbumListDTO';
 import Album from '../../entity/Album';
 import Artist from '../../../Artist/entity/Artist';
-import TransformerInterface from '../../../common/transformer/TransformerInterface';
+import TransformerInterface from '../../../Common/Transformer/TransformerInterface';
+import TransformerAbstractClass from '../../../Common/Transformer/TransformerAbstractClass';
 
-export default class GetAlbumsByArtistIdTransformer implements TransformerInterface {
+export default class GetAlbumsByArtistIdTransformer extends TransformerAbstractClass {
 
   handle(responseFromAPI: any): AlbumListDTO {
 

@@ -10,7 +10,7 @@ describe('AppleMusicClient tests', () => {
 
   it('GIVEN an request limited WHEN we querystring THEN the data is correct',
     async(() => {
-      const url = 'id=909253&entity=album&limit=10';
+      const url = 'id=909253&Entity=album&limit=10';
       appleMusicClient.get(url).then(res => {
         expect(res.resultCount).toBe(11);
       });
