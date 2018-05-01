@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import Album from '../../entity/Album';
-import {GetAlbumsByArtistId} from '../services/GetAlbumsByArtistId';
+import Album from '../../../album/entity/Album';
+import {GetAlbumsByArtistId} from '../../../album/list/services/GetAlbumsByArtistId';
 import Artist from '../../../Artist/entity/Artist';
 
 @Component({
