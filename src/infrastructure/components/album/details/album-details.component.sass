@@ -2,6 +2,7 @@
 @import "../../../../styles/sass/_variables/_font/family"
 @import "../../../../styles/sass/_variables/_font/size"
 @import "../../../../styles/sass/_variables/_font/weight"
+@import "../../../../styles/sass/_variables/_border/_radius"
 @import "../../../../styles/sass/_variables/_separators/margins"
 
 $album-thumbnail-size: 150px
@@ -9,18 +10,22 @@ $list-child-border-width: 1px
 $track-inner-vertical-distance: 15px
 $track-inner-horizontal-distance: 0
 
+
 .album
   padding: 40px
-  background: $black
+  background: $color-black
   width: 100%
   box-sizing: border-box
   max-width: 600px
   margin: 0 auto
 
+  > *:not(:first-child)
+    margin-top: $common-margin-large !important
 
   .album__header
     display: flex
     flex-wrap: wrap
+    align-content: center
     justify-content: center
 
   .album__thumbnail
@@ -36,19 +41,34 @@ $track-inner-horizontal-distance: 0
   .album__author,
   .album__title
     font-family: $font-family-primary
-    color: $white
+    color: $color-white
     text-align: center
 
   .album__title
-    font-size: $font-size-big
+    font-size: $font-size-large
     font-weight: $font-weight-x-bold
     margin: 0
 
   .album__author
     text-transform: uppercase
     font-weight: $font-weight-light
-    font-size: $font-size-medium
+    font-size: $font-size-small
     margin-top: $common-margin-small
+    color: $color-white-darker
+
+  .album__badge-price
+    display: block
+    margin-top: $common-margin-medium
+    padding: 10px 15px
+    background: $color-green !important
+    color: $color-white
+    font-family: $font-family-primary
+    font-size: $font-size-small
+    font-weight: $font-weight-bold
+    letter-spacing: 0.2px
+    text-align: center
+    border: none
+    border-radius: $border-radius-circle
 
   .album__track-list
     margin: 0
@@ -64,7 +84,7 @@ $track-inner-horizontal-distance: 0
     justify-content: space-between
     align-items: center
     &:not(:first-child)
-      border-top: $list-child-border-width solid $black-lighter
+      border-top: $list-child-border-width solid $color-black-lighter
 
   .album__track-name-numered
     flex-grow: 2
@@ -75,7 +95,7 @@ $track-inner-horizontal-distance: 0
   .album__track-preview-url,
   .album__track-name,
   .album__track-duration
-    color: $white-darker
+    color: $color-white-darker
 
   .album__track-preview-url
     margin-right: $common-margin-large
@@ -93,8 +113,32 @@ $track-inner-horizontal-distance: 0
   .album__track-duration
     flex-grow: 0
     font-size: $font-size-x-small
-    color: $white
+    color: $color-white
     font-family: monospace
+
+
+@media (min-width: 550px)
+  .album
+    .album__header
+      flex-wrap: nowrap
+      align-content: flex-start
+      justify-content: flex-start
+
+    .album__header-details
+      margin-top: 0
+      margin-left: $common-margin-large
+
+    .album__title, .album__author
+      text-align: left
+
+    .album__title
+      font-size: $font-size-big
+
+    .album__badge-price
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+      width: 150px
+      text-align: left
 
 
 @media (min-width: 767px)

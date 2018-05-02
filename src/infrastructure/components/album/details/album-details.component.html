@@ -1,29 +1,31 @@
 <div class="album">
   <header class="album__header">
-    <img src="{{ albumThumbnail }}" alt="Cover image of {{album.name}}">
+    <img [src]="album.thumbnail_url" alt="Album image of {{album.name}}" class="album__thumbnail">
 
     <div class="album__header-details">
       <h1 class="album__title">
-        {{ album && album.name ? album.name : 'Name of the artist' }}
+        {{album.name.length > 40 ? ((album.name|slice:0:40) + '...') : (album.name)}}
       </h1>
-
-      <h2 class="album__author">
-        {{ album && album.artist.name ? album.name : 'Name of the artist' }}
-      </h2>
+      <h2 class="album__author">{{album.artist.name}}</h2>
+      <span class="album__badge-price">
+        Only {{album.price + album.currency}}
+      </span>
     </div>
   </header>
 
-
   <ul class="album__track-list" role="list">
-    <li class="album__track" *ngFor="let track of tracks">
+    <li class="album__track" *ngFor="let track of album.tracks">
       <div class="album__track-name-numered">
         <a target="_blank" href="{{track.previewUrl}}" class="album__track-preview-url">
           <i class="material-icons">&#xE039;</i>
         </a>
-        <cite class="album__track-name">{{track.name}}</cite>
+        <cite class="album__track-name">
+          {{track.name.length > 40 ? ((track.name|slice:0:40) + '...') : (track.name)}}
+        </cite>
       </div>
 
       <span class="album__track-duration">{{track.timeMiliseconds}}ms</span>
     </li>
   </ul>
+
 </div>

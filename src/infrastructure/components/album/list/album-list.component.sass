@@ -9,15 +9,15 @@ $album-thumbnail-size: 50px
 $list-child-border-width: 1px
 $num-of-songs-ball-size: 2px
 $list-child-inner-vertical-distance: 15px
-$list-child-inner-horizontal-distance: 0
+$list-child-inner-horizontal-distance: 15px
 
 .album-list
-  padding: 40px
-  background: $black
+  padding: 40px 20px
+  background: $color-black
 
   .album-list__title
     font-family: $font-family-primary
-    color: $white
+    color: $color-white
     font-size: $font-size-x-large
     font-weight: $font-weight-x-bold
     margin: 0 0 $common-margin-medium 0
@@ -25,11 +25,16 @@ $list-child-inner-horizontal-distance: 0
   .album-list__album-list
     padding: 0
     margin: 0
+    max-height: 500px
+    overflow-y: auto
 
   .album-list__album-element-wrapper
     display: block
     &:not(:first-child)
-      border-top: $list-child-border-width solid $black-lighter
+      border-top: $list-child-border-width solid $color-black-lighter
+    &:hover
+      background: $color-black-lighter
+      cursor: pointer
 
   .album-list__album-element
     display: flex
@@ -39,7 +44,11 @@ $list-child-inner-horizontal-distance: 0
     padding: $list-child-inner-vertical-distance $list-child-inner-horizontal-distance
 
   .album-list__album-price
+    display: none
     flex-grow: 0
+
+  .album-list__album-go
+    color: $color-white
 
   .album-list__album-panel
     flex-grow: 2
@@ -62,13 +71,13 @@ $list-child-inner-horizontal-distance: 0
   .album-list__album-name
     font-weight: $font-weight-bold
     font-size: $font-size-small
-    color: $white
+    color: $color-white
     display: block
     font-style: normal
     letter-spacing: 0.25px
 
   .album-list__album-author
-    color: $white-darker
+    color: $color-white-darker
     font-style: normal
     font-size: $font-size-x-small
     margin-right: $common-margin-small
@@ -81,7 +90,7 @@ $list-child-inner-horizontal-distance: 0
     display: inline-block
     padding-left: 7px
     margin: 0
-    color: $white
+    color: $color-white
     font-size: $font-size-x-small
     font-style: italic
     &:before
@@ -92,12 +101,17 @@ $list-child-inner-horizontal-distance: 0
       height: $num-of-songs-ball-size
       width: $num-of-songs-ball-size
       border-radius: $border-radius-circle
-      background: $white
+      background: $color-white
 
   .album-list__album-price
     font-weight: $font-weight-x-bold
     font-size: $font-size-small
-    color: $white
+    color: $color-white
     font-family: monospace
 
 
+@media (min-width: 550px)
+  .album-list
+    padding: 40px
+    .album-list__album-price
+      display: block

@@ -12,12 +12,15 @@
 
           <div class="album-list__album-details">
             <cite class="album-list__album-name">{{album.name}}</cite>
-            <cite class="album-list__album-author">{{album.author}}</cite>
-            <dd class="album-list__album-num-of-songs">{{album.numOfSongs}} songs</dd>
+            <cite class="album-list__album-author">{{album.artist.name}}</cite>
+            <dd class="album-list__album-num-of-songs">{{album.numOfTracks}} songs</dd>
           </div>
         </span>
 
         <span class="album-list__album-price">{{album.price + album.currency}}</span>
+        <span class="album-list__album-go">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </span>
       </a>
     </li>
 

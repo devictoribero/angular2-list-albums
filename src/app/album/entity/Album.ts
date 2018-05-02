@@ -1,28 +1,34 @@
+import Artist from '../../Artist/entity/Artist';
+import Track from '../../Track/Entity/Track';
+
 export default class Album {
   private _id: number;
   private _name: string;
-  private _author: string;
   private _thumbnail_url: string;
   private _price: number;
-  private _numOfSongs: number;
   private _currency: string;
+  private _artist: Artist;
+  private _numOfTracks: number;
+  private _tracks?: Array<Track>;
 
   constructor(
     id: number,
     name: string,
-    author: string,
     image: string,
-    numOfSongs: number,
     price: number,
     currency: string,
+    artist: Artist,
+    numOfTracks: number,
+    tracks?: Array<Track>,
   ) {
     this._id = id;
     this._name = name;
-    this._author = author;
     this._thumbnail_url = image;
-    this._numOfSongs = numOfSongs;
     this._price = price;
     this._currency = currency;
+    this._artist = artist;
+    this._numOfTracks = numOfTracks;
+    this._tracks = tracks;
   }
 
   get id(): number {
@@ -33,10 +39,6 @@ export default class Album {
     return this._name;
   }
 
-  get author(): string {
-    return this._author;
-  }
-
   get thumbnail_url(): string {
     return this._thumbnail_url;
   }
@@ -45,11 +47,19 @@ export default class Album {
     return this._price;
   }
 
-  get numOfSongs(): number {
-    return this._numOfSongs;
-  }
-
   get currency(): string {
     return this._currency;
+  }
+
+  get artist(): Artist {
+    return this._artist;
+  }
+
+  get tracks(): Array<Track> {
+    return this._tracks;
+  }
+
+  get numOfTracks(): number {
+    return this._numOfTracks;
   }
 }

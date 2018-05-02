@@ -7,7 +7,7 @@ import TransformerAbstractClass from '../../../Common/Transformer/CommonTransfor
 
 export default class GetTracksFromAlbumByIdTransformer extends TransformerAbstractClass {
 
-  handle(responseFromAPI: any): AlbumDetailsDTO {
+  handle(responseFromAPI: any): Album {
 
     const {
       artistId,
@@ -15,10 +15,7 @@ export default class GetTracksFromAlbumByIdTransformer extends TransformerAbstra
       artistName,
       primaryGenreName
     } = responseFromAPI[0];
-
     const artist = new Artist(artistId, artistLinkUrl, artistName, primaryGenreName);
-
-    const thumbnail = responseFromAPI[0].artworkUrl100;
 
     const tracks = responseFromAPI.filter(each => each.kind === 'song')
       .map(each => new Track(
@@ -32,7 +29,18 @@ export default class GetTracksFromAlbumByIdTransformer extends TransformerAbstra
         )
       );
 
-    return new AlbumDetailsDTO(artist, thumbnail, tracks);
+    const album = new Album(
+      responseFromAPI[0].collectionId,
+      responseFromAPI[0].collectionName,
+      responseFromAPI[0].artworkUrl100,
+      responseFromAPI[0].collectionPrice,
+      responseFromAPI[0].currency,
+      artist,
+      tracks.length,
+      tracks
+    );
+
+    return album;
   }
 }
 

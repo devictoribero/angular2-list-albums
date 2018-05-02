@@ -6,6 +6,8 @@ import MusicService from '../../../../app/album/services/MusicService';
 import CommonTransformer from '../../../../app/Common/Transformer/CommonTransformer';
 import {GetTracksFromAlbumById} from '../../../../app/album/details/services/GetTracksFromAlbumById';
 import GetTracksFromAlbumByIdTransformer from '../../../../app/album/details/transformers/GetTracksFromAlbumByIdTransformer';
+import {ChangeDetectorRef} from '@angular/core';
+import Album from '../../../../app/album/entity/Album';
 
 @Component({
   selector: 'app-album-details',
@@ -21,34 +23,32 @@ import GetTracksFromAlbumByIdTransformer from '../../../../app/album/details/tra
 })
 
 export class AlbumDetailsComponent implements OnInit {
-  artist: Artist;
-  albumThumbnail: string = 'https://www.bhphotovideo.com/images/images500x500/Savage_27_12_107_x_12yds_Background_45483.jpg';
-  tracks: Array<Track> = [];
+  album: Album;
   private getTracksFromAlbumById: MusicService;
   private transformer: CommonTransformer;
   private route: ActivatedRoute;
+  private ref: ChangeDetectorRef;
 
   constructor(
     service: MusicService,
     transformer: CommonTransformer,
-    route: ActivatedRoute
+    route: ActivatedRoute,
+    ref: ChangeDetectorRef,
   ) {
     this.getTracksFromAlbumById = service;
     this.transformer = transformer;
     this.route = route;
+    this.ref = ref;
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      //const albumId = +params['id'];
-      const albumId = 879273552;
+      const albumId = +params['id'];
 
       this.getTracksFromAlbumById.handle(albumId).subscribe(result => {
-        const albumsDetailDTO = this.transformer.handle(result.results);
-        this.tracks = albumsDetailDTO.tracks;
-        console.log(this.tracks);
-        this.artist = albumsDetailDTO.artist;
-        this.albumThumbnail = albumsDetailDTO.thumbnail;
+        this.album = this.transformer.handle(result.results);
+        console.log(this.album);
+        this.ref.detectChanges();
       });
     });
   }

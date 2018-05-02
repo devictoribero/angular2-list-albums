@@ -49,7 +49,7 @@ export default class Track {
     return this._timeMiliseconds;
   }
 
-  get previewUrl(): number {
+  get previewUrl(): string {
     return this._previewUrl;
   }
 }

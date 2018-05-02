@@ -6,7 +6,6 @@ import TransformerAbstractClass from '../../../Common/Transformer/CommonTransfor
 export default class GetAlbumsByArtistIdTransformer extends TransformerAbstractClass {
 
   handle(responseFromAPI: any): AlbumListDTO {
-
     const {
       artistId,
       artistLinkUrl,
@@ -18,13 +17,13 @@ export default class GetAlbumsByArtistIdTransformer extends TransformerAbstractC
 
     const albums = responseFromAPI.filter(each => each.collectionType === 'Album')
       .map(each => new Album(
-        each.amgArtistId,
+        each.collectionId,
         each.collectionName,
-        each.artistName,
         each.artworkUrl100,
-        each.trackCount,
         each.collectionPrice,
-        each.currency
+        each.currency,
+        artist,
+        each.trackCount,
         )
       );
 
