@@ -12,6 +12,11 @@ $track-inner-horizontal-distance: 0
 .album
   padding: 40px
   background: $black
+  width: 100%
+  box-sizing: border-box
+  max-width: 600px
+  margin: 0 auto
+
 
   .album__header
     display: flex
@@ -30,7 +35,7 @@ $track-inner-horizontal-distance: 0
 
   .album__author,
   .album__title
-    font-family: $fontFamily-primary
+    font-family: $font-family-primary
     color: $white
     text-align: center
 
@@ -47,30 +52,58 @@ $track-inner-horizontal-distance: 0
 
   .album__track-list
     margin: 0
-    padding:  0
+    padding: 0
+    max-height: 350px
+    overflow-y: auto
 
   .album__track
+    position: relative
     list-style: none
     padding: $track-inner-vertical-distance $track-inner-horizontal-distance
-    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &:not(:first-child)
+      border-top: $list-child-border-width solid $black-lighter
 
-  .album__track:not(:first-child)
-    border-top: $list-child-border-width solid $black-lighter
+  .album__track-name-numered
+    flex-grow: 2
+    display: flex
+    align-items: center
+    margin-right: $common-margin-large
 
-  .album__track-number,
+  .album__track-preview-url,
   .album__track-name,
   .album__track-duration
     color: $white-darker
 
+  .album__track-preview-url
+    margin-right: $common-margin-large
+    font-family: $font-family-primary
+
   .album__track-name
-    font-family: $fontFamily-primary
+    font-family: $font-family-primary
     font-weight: $font-weight-bold
     font-style: inherit
     display: block
     letter-spacing: 0.25px
     line-height: 24px
-    font-size: $font-size-large
+    font-size: $font-size-small
 
   .album__track-duration
-    font-family: $fontFamily-secondary
+    flex-grow: 0
     font-size: $font-size-x-small
+    color: $white
+    font-family: monospace
+
+
+@media (min-width: 767px)
+  .album
+    .album__track-list
+      max-height: 500px
+
+
+@media (min-width: 1024px)
+  .album
+    .album__track-list
+      max-height: inherit

@@ -1,11 +1,11 @@
 import ServiceInterface from '../../Common/Service/CommonServiceInterface';
-import MusicAdapter from '../adapters/MusicAdapter';
+import { HttpClient } from '@angular/common/http';
 
 export default abstract class MusicService implements ServiceInterface {
-  protected adapter: MusicAdapter;
+  protected httpClient: HttpClient;
 
-  constructor(adapter: MusicAdapter) {
-    this.adapter = adapter;
+  constructor(httpClient: HttpClient) {
+    this.httpClient = httpClient;
   }
 
   abstract handle(id: any, param2?: any);

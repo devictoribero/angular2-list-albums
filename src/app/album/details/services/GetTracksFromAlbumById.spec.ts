@@ -1,34 +1,27 @@
-import ServiceInterface from '../../../Common/Service/CommonServiceInterface';
-import {GetAlbumsByArtistId} from '../../list/services/GetAlbumsByArtistId';
-import MusicAdapter from '../../adapters/MusicAdapter';
-import AppleMusicClient from '../../../../infrastructure/AppleMusic/clients/MusicClient';
-import HTTPClient from '../../../../infrastructure/http/clients/HTTPClient';
-import {async} from '@angular/core/testing';
+import {async, TestBed} from '@angular/core/testing';
 import {GetTracksFromAlbumById} from './GetTracksFromAlbumById';
-import GetAlbumsByArtistIdTransformer from '../../list/transformers/GetAlbumsByArtistIdTransformer';
-import GetTracksFromAlbumByIdTransformer from '../transformers/GetTracksFromAlbumByIdTransformer';
+import MusicService from '../../services/MusicService';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('GetTracksFromAlbumById tests', () => {
-  let getTracksFromAlbumById: ServiceInterface;
-
   beforeEach(() => {
-    getTracksFromAlbumById = new GetTracksFromAlbumById(
-      new MusicAdapter(
-        new GetTracksFromAlbumByIdTransformer(),
-        new AppleMusicClient(
-          new HTTPClient()
-        )
-      )
-    );
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [{
+        provide: MusicService,
+        useClass: GetTracksFromAlbumById
+      }],
+    });
   });
 
   it('GIVEN an album id WHEN we fetch data THEN we have the result limited by 2', async(() => {
     const albumID = 909253;
     const numberAlbumsMax = 2;
+    const getTracksFromAlbumById = TestBed.get(GetTracksFromAlbumById);
+
     getTracksFromAlbumById.handle(albumID, numberAlbumsMax).then(res => {
+      console.log(res);
       expect(res.totalAlbums).toBe(2);
     });
   }));
-
-
 });

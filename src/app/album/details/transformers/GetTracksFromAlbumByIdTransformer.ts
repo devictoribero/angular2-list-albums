@@ -9,19 +9,26 @@ export default class GetTracksFromAlbumByIdTransformer extends TransformerAbstra
 
   handle(responseFromAPI: any): AlbumDetailsDTO {
 
-    const {artistId, artistLinkUrl, artistName, primaryGenreName} = responseFromAPI.results[0];
+    const {
+      artistId,
+      artistLinkUrl,
+      artistName,
+      primaryGenreName
+    } = responseFromAPI[0];
 
     const artist = new Artist(artistId, artistLinkUrl, artistName, primaryGenreName);
 
-    const thumbnail = responseFromAPI.results[1].artworkUrl100;
+    const thumbnail = responseFromAPI[0].artworkUrl100;
 
-    const tracks = responseFromAPI.results.filter(each => each.collectionType === 'Album')
+    const tracks = responseFromAPI.filter(each => each.kind === 'song')
       .map(each => new Track(
         each.trackId,
+        each.trackNumber,
         each.trackName,
         each.artistName,
         each.trackPrice,
         each.trackTimeMillis,
+        each.trackViewUrl,
         )
       );
 

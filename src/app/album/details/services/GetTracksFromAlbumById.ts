@@ -1,20 +1,17 @@
 import {Injectable} from '@angular/core';
-import ServiceInterface from '../../../Common/Service/CommonServiceInterface';
-import MusicAdapterInterface from '../../../Common/Adapter/CommonAdapterInterface';
-import MusicRequest from '../../../Request/MusicRequest';
+import { HttpClient } from '@angular/common/http';
+import AlbumService from '../../services/MusicService';
 
 @Injectable()
-export class GetTracksFromAlbumById implements ServiceInterface {
-  private adapter: MusicAdapterInterface;
+export class GetTracksFromAlbumById extends AlbumService {
 
-  constructor(adapter: MusicAdapterInterface) {
-    this.adapter = adapter;
+  constructor(httpClient: HttpClient) {
+    super(httpClient);
   }
 
   handle(id: number, limit?: number): any {
-    return this.adapter.get(
-      new MusicRequest(id, 'song', limit)
-    );
+    return this.httpClient.get('https://itunes.apple.com/lookup?id=' + id + '&entity=song');
   }
 
 }
+

@@ -13,28 +13,29 @@ import CommonTransformer from '../../../../app/Common/Transformer/CommonTransfor
   providers: [{
     provide: MusicService,
     useClass: GetAlbumsByArtistId
-  },
-  {
+  }, {
     provide: CommonTransformer,
     useClass: GetAlbumsByArtistIdTransformer
-  },
-  ]
+  }]
 })
 
 export class AlbumListComponent implements OnInit {
   artist: Artist;
   albums: Array<Album> = [];
-  private getAlbumsByArtistService: GetAlbumsByArtistId;
+  private getAlbumsByArtistId: GetAlbumsByArtistId;
+  private transformer: GetAlbumsByArtistIdTransformer;
 
-  constructor(service: GetAlbumsByArtistId) {
-    this.getAlbumsByArtistService = service;
+  constructor(service: MusicService, transformer: CommonTransformer) {
+    this.getAlbumsByArtistId = service;
+    this.transformer = transformer;
   }
 
   ngOnInit() {
     const idJackJohnson = 909253;
-    this.getAlbumsByArtistService.handle(idJackJohnson).then(result => {
-      this.albums = result.albums;
-      this.artist = result.artist;
+    this.getAlbumsByArtistId.handle(idJackJohnson).subscribe(result => {
+      const albumsListDTO = this.transformer.handle(result.results);
+      this.artist = albumsListDTO.artist;
+      this.albums = albumsListDTO.albums;
     });
   }
 }

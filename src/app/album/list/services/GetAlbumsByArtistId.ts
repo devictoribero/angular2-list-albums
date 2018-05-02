@@ -1,19 +1,15 @@
 import {Injectable} from '@angular/core';
-import MusicRequest from '../../../Request/MusicRequest';
+import { HttpClient } from '@angular/common/http';
 import AlbumService from '../../services/MusicService';
-import MusicAdapter from '../../adapters/MusicAdapter';
 
 @Injectable()
 export class GetAlbumsByArtistId extends AlbumService {
 
-  constructor(adapter: MusicAdapter) {
-    super(adapter);
+  constructor(httpClient: HttpClient) {
+    super(httpClient);
   }
 
-  handle(id: number, limit?: number): Promise<any> {
-    return this.adapter.get(
-      new MusicRequest(id, 'album', limit)
-    );
+  handle(id: number, limit?: number): any {
+    return this.httpClient.get('https://itunes.apple.com/lookup?id=' + id + '&entity=album');
   }
-
 }

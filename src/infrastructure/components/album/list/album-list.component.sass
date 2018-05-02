@@ -16,7 +16,7 @@ $list-child-inner-horizontal-distance: 0
   background: $black
 
   .album-list__title
-    font-family: $fontFamily-primary
+    font-family: $font-family-primary
     color: $white
     font-size: $font-size-x-large
     font-weight: $font-weight-x-bold
@@ -27,16 +27,25 @@ $list-child-inner-horizontal-distance: 0
     margin: 0
 
   .album-list__album-element-wrapper
-    text-decoration: none
     display: block
-
-  .album-list__album-element-wrapper:not(:first-child)
-    border-top: $list-child-border-width solid $black-lighter
+    &:not(:first-child)
+      border-top: $list-child-border-width solid $black-lighter
 
   .album-list__album-element
     display: flex
-    align-items: flex-start
+    align-items: center
+    justify-content: space-between
+    text-decoration: none
     padding: $list-child-inner-vertical-distance $list-child-inner-horizontal-distance
+
+  .album-list__album-price
+    flex-grow: 0
+
+  .album-list__album-panel
+    flex-grow: 2
+    display: flex
+    align-items: center
+    margin-right: $common-margin-large
 
   .album-list__album-thumbnail
     width: $album-thumbnail-size
@@ -44,25 +53,28 @@ $list-child-inner-horizontal-distance: 0
     height: $album-thumbnail-size
     max-height: $album-thumbnail-size
     border-radius: $border-radius-rounded
-
-  .album-list__album-details
-    margin-left: $common-margin-medium
+    margin-right: $common-margin-medium
 
   .album-list__album-num-of-songs,
   .album-list__album-name
-    font-family: $fontFamily-primary
+    font-family: $font-family-primary
 
   .album-list__album-name
     font-weight: $font-weight-bold
-    font-size: $font-size-medium
+    font-size: $font-size-small
     color: $white
     display: block
+    font-style: normal
+    letter-spacing: 0.25px
 
   .album-list__album-author
     color: $white-darker
-    font-style: italic
-    font-size: $font-size-small
+    font-style: normal
+    font-size: $font-size-x-small
     margin-right: $common-margin-small
+    text-transform: uppercase
+    font-family: $font-family-primary
+    letter-spacing: 0.75px
 
   .album-list__album-num-of-songs
     position: relative
@@ -81,4 +93,11 @@ $list-child-inner-horizontal-distance: 0
       width: $num-of-songs-ball-size
       border-radius: $border-radius-circle
       background: $white
+
+  .album-list__album-price
+    font-weight: $font-weight-x-bold
+    font-size: $font-size-small
+    color: $white
+    font-family: monospace
+
 
